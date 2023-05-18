@@ -2,7 +2,7 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className="carousel w-full max-h-[840px]">
+        <div className="carousel w-full max-h-[840px] rounded-lg mb-12">
             <div id="slide1" className="carousel-item relative w-full">
                 <img src="https://i.ibb.co/8jqKV9f/slider4-1.jpg" className="w-full" />
                 <div className="absolute flex flex-col justify-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
