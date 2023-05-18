@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS */
+@import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
+
+* {
+    font-family: 'Stylish', sans-serif;
+}
+
+
+.bg-img {
+    background-image: url('https://i.ibb.co/d5jTFNf/3147853.jpg');
+}
+
+.zigzag {
+    background: linear-gradient(-135deg, chartreuse 5px, transparent 0) 0 5px, linear-gradient(135deg, chartreuse 5px, #fff 0) 0 5px;
+    background-color: chartreuse;
+    background-position: left bottom;
+    background-repeat: repeat-x;
+    background-size: 10px 10px;
+}
