@@ -3,11 +3,13 @@
 @tailwind utilities;
 
 /* Custom CSS */
-@import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
 
+/* Global */
 * {
-    font-family: 'Stylish', sans-serif;
+    font-family: cursive;
 }
+
+
 
 
 .bg-img {
