@@ -9,12 +9,9 @@
     font-family: cursive;
 }
 
-
-
-
-.bg-img {
-    background-image: url('https://i.ibb.co/d5jTFNf/3147853.jpg');
-}
+/* .fat {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
+} */
 
 .zigzag {
     background: linear-gradient(-135deg, chartreuse 5px, transparent 0) 0 5px, linear-gradient(135deg, chartreuse 5px, #fff 0) 0 5px;

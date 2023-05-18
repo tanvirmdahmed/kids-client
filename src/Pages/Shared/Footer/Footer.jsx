@@ -8,20 +8,20 @@ const Footer = () => {
             <div className="footer p-10 text-neutral-content items-center">
                 <div className='mx-auto'>
                     <img src="https://i.ibb.co/PGSxjFX/345661271-907576583633683-8660512588925463605-n-removebg-preview.png" className='w-24 h-24' alt="" />
-                    <h5>Toy Biz Co.<br />Providing reliable tech since 2000</h5>
+                    <h5><span className='text-lg'>Toy Biz Co.</span><br />Providing reliable tech since 2000</h5>
                 </div>
                 <div className='mx-auto'>
                     <span className="footer-title">Social</span>
                     <div className="grid grid-flow-col gap-4">
-                        <a href='https://twitter.com/'><FaTwitter className='text-2xl text-[#1c93e4]'></FaTwitter></a>
-                        <a href='https://www.youtube.com/'><FaYoutube className='text-2xl text-[#f10002]'></FaYoutube></a>
-                        <a href='https://www.facebook.com/'><FaFacebook className='text-2xl text-[#1771e6]'></FaFacebook></a>
+                        <a href='https://twitter.com/'><FaTwitter className='text-4xl text-[#1c93e4]'></FaTwitter></a>
+                        <a href='https://www.youtube.com/'><FaYoutube className='text-4xl text-[#f10002]'></FaYoutube></a>
+                        <a href='https://www.facebook.com/'><FaFacebook className='text-4xl text-[#1771e6]'></FaFacebook></a>
                     </div>
                 </div>
                 <div className='mx-auto'>
-                    <span className="footer-title mb-2">Subscribe</span>
+                    <span className="footer-title">Subscribe</span>
                     <div className="relative">
-                        <input type="text" placeholder="username@site.com" className="input input-bordered w-full pr-16" />
+                        <input type="text" placeholder="username@site.com" className="input input-bordered text-black opacity-70 w-full pr-16" />
                         <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
                     </div>
                 </div>
