@@ -75,16 +75,22 @@ const AddToy = () => {
                             <span className="label-text">Seller Email</span>
                         </label>
                         <label>
-                            <input type="text" name="sellerEmail" placeholder="Seller Email" className="input input-bordered w-full" />
+                            <input type="email" name="sellerEmail" placeholder="Seller Email" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">
                         <label className="label">
                             <span className="label-text">Sub-Category</span>
                         </label>
-                        <label>
+                        {/* <label>
                             <input type="text" name="subCategory" placeholder="Sub-Category" className="input input-bordered w-full" />
-                        </label>
+                        </label> */}
+                        <select className="select select-bordered w-full" name='subCategory' placeholder='Sub-Category'>
+                            <option>Han Solo</option>
+                            <option>Greedo</option>
+                            <option>Greedo</option>
+                            <option>Greedo</option>
+                        </select>
                     </div>
                 </div>
                 {/* form photo url and price row */}
@@ -94,7 +100,7 @@ const AddToy = () => {
                             <span className="label-text">Toy Photo URL</span>
                         </label>
                         <label>
-                            <input type="text" name="photoUrl" placeholder="Toy Photo URL" className="input input-bordered w-full" />
+                            <input type="url" name="photoUrl" placeholder="Toy Photo URL" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">
@@ -136,7 +142,7 @@ const AddToy = () => {
                         </label>
                     </div>
                 </div>
-                <input type="submit" value="Add Toy" className="btn btn-block" />
+                <input type="submit" value="Add Toy" className="btn btn-block btn-success" />
 
             </form>
         </div>
