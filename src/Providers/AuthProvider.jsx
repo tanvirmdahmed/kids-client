@@ -3,12 +3,15 @@ import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword,
 import app from '../Firebase/firebase.config';
 
 
+
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [photo, setPhoto] = useState(null)
+
 
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
@@ -42,6 +45,7 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, loggedUser => {
             setUser(loggedUser);
+            setPhoto(loggedUser?.photoURL)
             setLoading(false);
         })
 
@@ -57,6 +61,7 @@ const AuthProvider = ({ children }) => {
         })
             .then(() => {
                 console.log('User Updated');
+                setPhoto(url)
             })
             .catch((error) => {
                 console.log(error.message);
@@ -72,7 +77,9 @@ const AuthProvider = ({ children }) => {
         logOut,
         profileUpdate,
         googleSignIn,
-        githubSignIn
+        githubSignIn,
+        photo
+
     }
 
     return (

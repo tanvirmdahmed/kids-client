@@ -93,7 +93,7 @@ const Register = () => {
                     </div>
                     <div>
                         <div className="text-center">
-                            <h1 className="text-3xl md:lg:text-5xl font-bold">Please Register!!!</h1>
+                            <h1 className="text-4xl font-bold">Please Register!!!</h1>
                         </div>
                         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                             <div className='px-8 mt-8'>
@@ -114,9 +114,9 @@ const Register = () => {
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Photo URL*</span>
+                                        <span className="label-text">Photo URL</span>
                                     </label>
-                                    <input type="url" name='url' placeholder="Photo URL" className="input input-bordered" required />
+                                    <input type="url" name='url' placeholder="Photo URL" className="input input-bordered" />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
