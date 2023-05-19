@@ -44,14 +44,12 @@ const Navbar = () => {
                 <div className="menu menu-horizontal gap-7 text-lg">
                     <ActiveLink to='/'>Home</ActiveLink>
                     <ActiveLink to='/allToys'>All Toys</ActiveLink>
-                    {/* {
+                    {
                         user && <ActiveLink to='/myToys'>My Toys</ActiveLink>
                     }
                     {
                         user && <ActiveLink to='/addToy'>Add a Toy</ActiveLink>
-                    } */}
-                    <ActiveLink to='/myToys'>My Toys</ActiveLink>
-                    <ActiveLink to='/addToy'>Add a Toy</ActiveLink>
+                    }
                     <ActiveLink to='/blogs'>Blogs</ActiveLink>
                 </div>
             </div>

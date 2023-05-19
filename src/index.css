@@ -7,11 +7,10 @@
 /* Global */
 * {
     font-family: cursive;
+    /* font-family: 'Poppins', sans-serif; */
 }
 
-/* .fat {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
-} */
+
 
 .zigzag {
     background: linear-gradient(-135deg, chartreuse 5px, transparent 0) 0 5px, linear-gradient(135deg, chartreuse 5px, #fff 0) 0 5px;

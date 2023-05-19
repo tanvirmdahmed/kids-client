@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import useTitle from '../../Hooks/useTitle';
+import { AuthContext } from '../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const AddToy = () => {
+    const { user } = useContext(AuthContext);
     useTitle('Add a Toy')
 
     const handleAddToy = event => {
@@ -41,6 +44,7 @@ const AddToy = () => {
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
+                    form.reset()
                 }
             })
     }
@@ -75,7 +79,7 @@ const AddToy = () => {
                             <span className="label-text">Seller Email</span>
                         </label>
                         <label>
-                            <input type="email" name="sellerEmail" placeholder="Seller Email" className="input input-bordered w-full" />
+                            <input type="email" name="sellerEmail" defaultValue={user.email} placeholder="Seller Email" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">
@@ -86,10 +90,9 @@ const AddToy = () => {
                             <input type="text" name="subCategory" placeholder="Sub-Category" className="input input-bordered w-full" />
                         </label> */}
                         <select className="select select-bordered w-full" name='subCategory' placeholder='Sub-Category'>
-                            <option>Han Solo</option>
-                            <option>Greedo</option>
-                            <option>Greedo</option>
-                            <option>Greedo</option>
+                            <option>Science kits</option>
+                            <option>Math learning toys</option>
+                            <option>engineering kits</option>
                         </select>
                     </div>
                 </div>
@@ -142,7 +145,7 @@ const AddToy = () => {
                         </label>
                     </div>
                 </div>
-                <input type="submit" value="Add Toy" className="btn btn-block btn-success" />
+                <input type="submit" value="Add Toy" className="btn btn-block btn-secondary" />
 
             </form>
         </div>
