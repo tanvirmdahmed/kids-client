@@ -44,12 +44,14 @@ const Navbar = () => {
                 <div className="menu menu-horizontal gap-7 text-lg">
                     <ActiveLink to='/'>Home</ActiveLink>
                     <ActiveLink to='/allToys'>All Toys</ActiveLink>
-                    {
+                    {/* {
                         user && <ActiveLink to='/myToys'>My Toys</ActiveLink>
                     }
                     {
                         user && <ActiveLink to='/addToy'>Add a Toy</ActiveLink>
-                    }
+                    } */}
+                    <ActiveLink to='/myToys'>My Toys</ActiveLink>
+                    <ActiveLink to='/addToy'>Add a Toy</ActiveLink>
                     <ActiveLink to='/blogs'>Blogs</ActiveLink>
                 </div>
             </div>
@@ -73,9 +75,9 @@ const Navbar = () => {
                 {
                     user ? <Link onClick={handleLogOut} className="btn btn-outline btn-warning">Logout</Link> : <Link to='/login' className="btn btn-outline btn-warning">Login</Link>
                 }
-                {/* {
-                    user ? <Link onClick={handleLogOut} className="btn btn-secondary">Logout</Link> : <Link to='/login' className="btn btn-warning">Login</Link>
-                } */}
+                {
+                    !user && <Link to='/register' className="btn btn-outline btn-info">Register</Link>
+                }
             </div>
         </div>
     );
