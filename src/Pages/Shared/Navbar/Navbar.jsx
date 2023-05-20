@@ -23,7 +23,7 @@ const Navbar = () => {
                         <CgMenuLeftAlt className='h-8 w-8'></CgMenuLeftAlt>
                     </label>
 
-                    <div tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-4 bg-base-200 shadow rounded-box w-28 gap-4">
+                    <div tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-4 bg-base-200 shadow rounded-box w-40 gap-4">
                         <ActiveLink to='/' className="text-orange-400">Home</ActiveLink>
                         <ActiveLink to='/allToys'>All Toys</ActiveLink>
                         {

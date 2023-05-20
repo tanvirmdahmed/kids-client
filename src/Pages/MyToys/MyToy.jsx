@@ -1,10 +1,48 @@
 import React from 'react';
 import { FaEdit, FaRegStar, FaStar } from 'react-icons/fa';
-import { MdDeleteSweep, MdDescription } from "react-icons/md";
 import Rating from 'react-rating';
+import Swal from 'sweetalert2';
+import UpdateModal from './UpdateModal';
 
-const MyToy = ({ myToy, i }) => {
-    const { _id, photoUrl, toyName, rating, subCategory, price, quantity, description } = myToy;
+const MyToy = ({ myToy, i, handleDelete }) => {
+    const { _id, photoUrl, toyName, rating, subCategory, price, quantity } = myToy;
+
+    const handleUpdateToy = event => {
+        // event.preventDefault();
+
+        const form = event.target;
+
+        const price = form.price.value;
+        const quantity = form.quantity.value;
+        const description = form.description.value;
+
+        const updatedToy = { price, quantity, description }
+
+        console.log(updatedToy);
+
+        // send data to the server
+        fetch(`http://localhost:5000/myToy/${_id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedToy)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Coffee Updated Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
+            })
+    }
+
+
     return (
         <tr className='text-center'>
             <td>{i + 1}</td>
@@ -35,53 +73,17 @@ const MyToy = ({ myToy, i }) => {
             <td>{quantity} pcs</td>
             <td>
                 {/* modal button */}
-                <label htmlFor="my-modal-3" className="btn btn-square btn-outline btn-secondary">
+                <label htmlFor={_id} className="btn btn-square">
                     <FaEdit></FaEdit>
                 </label>
                 {/* modal body */}
-                <input type="checkbox" id="my-modal-3" className="modal-toggle" />
-                <div className="modal">
-                    <div className="modal-box whitespace-normal items-start">
-                        <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                        <h1 className='text-2xl font-bold'>{toyName}</h1>
-                        <form>
-                            <div className="">
-                                <div className="form-control w-full">
-                                    <label className="label">
-                                        <span className="label-text">Price</span>
-                                    </label>
-                                    <label>
-                                        <input type="text" name="price" defaultValue={price} placeholder="Price" className="input input-bordered w-full" />
-                                    </label>
-                                </div>
-                            </div>
-                            <div className="">
-                                <div className="form-control w-full">
-                                    <label className="label">
-                                        <span className="label-text">Available Quantity</span>
-                                    </label>
-                                    <label>
-                                        <input type="text" name="quantity" defaultValue={quantity} placeholder="Available Quantity" className="input input-bordered w-full" />
-                                    </label>
-                                </div>
-                            </div>
-                            <div className="mb-3">
-                                <div className="form-control w-full">
-                                    <label className="label">
-                                        <span className="label-text">Detail Description</span>
-                                    </label>
-                                    <label>
-                                        <input type="text" name="description" defaultValue={description} placeholder="Detail Description" className="input input-bordered w-full" />
-                                    </label>
-                                </div>
-                            </div>
-                            <input type="submit" value="Edit Toy" className="btn btn-block btn-info" />
-                        </form>
-                    </div>
-                </div>
+                <UpdateModal
+                    myToy={myToy}
+                    handleUpdateToy={handleUpdateToy}
+                ></UpdateModal>
             </td>
             <td>
-                <button className="btn btn-circle">
+                <button onClick={() => handleDelete(_id)} className="btn btn-circle">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
             </td>

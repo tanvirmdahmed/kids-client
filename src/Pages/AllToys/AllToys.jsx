@@ -1,19 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useTitle from '../../Hooks/useTitle';
 import { useLoaderData } from 'react-router-dom';
 import Toy from './Toy';
 
 const AllToys = () => {
     useTitle('All Toys')
-    const allToys = useLoaderData();
-    console.log(allToys);
+    const toys = useLoaderData();
+    const [allToys, setAllToys] = useState(toys);
+    const [searchValue, setSearchValue] = useState('');
+
+    const handleSearchChange = (event) => {
+        setSearchValue(event.target.value);
+        // Filter toys based on search term
+        const filteredToys = allToys.filter((toy) =>
+            (toy.toyName.toLowerCase().includes(searchValue.toLowerCase()))
+        );
+        setAllToys(filteredToys);
+        console.log(filteredToys);
+    };
+
+
+    console.log(allToys, toys);
 
     return (
         <div className='my-12'>
             <div className="form-control mb-6">
                 <div className="input-group justify-center">
-                    <input type="text" placeholder="Search…" className="input input-bordered" />
-                    <button className="btn btn-square">
+                    <input type="text" placeholder="Search…" className="input input-bordered" value={searchValue} onChange={handleSearchChange} />
+                    <button onClick={handleSearchChange} className="btn btn-square">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                     </button>
                 </div>
