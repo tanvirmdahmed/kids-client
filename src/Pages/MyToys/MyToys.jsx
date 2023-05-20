@@ -97,20 +97,20 @@ const MyToys = () => {
                 <label tabIndex={0} className="flex items-center border-2 border-gray-900 rounded-lg p-3 my-4 m-1">Sort by Price <FaAngleDown></FaAngleDown></label>
                 <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
                     <li onClick={handleDefault}><a>Default</a></li>
-                    <li onClick={handleAscending}><a>Ascending</a></li>
-                    <li onClick={handleDescending}><a>Descending</a></li>
+                    <li onClick={handleDescending}><a>Price Low to High</a></li>
+                    <li onClick={handleAscending}><a>Price Hight to Low</a></li>
                 </ul>
             </div>
             <table className="table w-full">
                 {/* head */}
-                <thead className='text-center'>
+                <thead>
                     <tr className='text-2xl'>
                         <th className='text-base font-bold'>Sl No.</th>
                         <th className='text-base font-bold'>Toy Name & Ratting</th>
                         <th className='text-base font-bold'>Sub-Category</th>
                         <th className='text-base font-bold'>Price</th>
                         <th className='text-base font-bold'>Available Quantity</th>
-                        <th className='text-base font-bold'>Edit Toy</th>
+                        <th className='text-base font-bold'>Update Toy</th>
                         <th className='text-base font-bold'></th>
                     </tr>
                 </thead>

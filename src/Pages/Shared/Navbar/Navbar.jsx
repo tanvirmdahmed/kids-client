@@ -16,7 +16,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="navbar py-4 w-full lg:w-[70%] mx-auto">
+        <div className="navbar bg-teal-300 rounded-b-lg shadow-lg py-4 w-full mx-auto">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -37,7 +37,7 @@ const Navbar = () => {
                 </div>
                 <div className='flex items-center gap-3'>
                     <img src="https://i.ibb.co/PGSxjFX/345661271-907576583633683-8660512588925463605-n-removebg-preview.png" className='w-8 md:w-12 lg:w-12 h-8 md:h-10 lg:h-12' alt="" />
-                    <Link to='/' className="text-[#EB1C23] text-xl md:text-xl lg:text-3xl font-bold">Toy Biz</Link>
+                    <Link to='/' className="text-[#EB1C23] text-xl md:text-xl lg:text-3xl font-extrabold">Toy Biz</Link>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -71,10 +71,10 @@ const Navbar = () => {
                     </div>
                 }
                 {
-                    user ? <Link onClick={handleLogOut} className="btn btn-outline btn-warning">Logout</Link> : <Link to='/login' className="btn btn-outline btn-warning">Login</Link>
+                    user ? <Link onClick={handleLogOut} className="btn bg-gradient-to-r from-[#2563EB] to-[#0949d2]  border-none hover:bg-[#0949d2]">Logout</Link> : <Link to='/login' className="btn bg-gradient-to-r from-[#2563EB] to-[#0949d2] border-none hover:bg-[#0949d2]">Login</Link>
                 }
                 {
-                    !user && <Link to='/register' className="btn btn-outline btn-info">Register</Link>
+                    !user && <Link to='/register' className="btn bg-gradient-to-r from-[#bb9631] to-[#c3930e] border-none hover:bg-[#0949d2]">Register</Link>
                 }
             </div>
         </div>

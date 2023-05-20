@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 const UpdateModal = ({ myToy, handleUpdateToy }) => {
-    const [close, setClose] = useState(false);
 
     const { _id, price, quantity, description } = myToy;
 
@@ -40,7 +39,8 @@ const UpdateModal = ({ myToy, handleUpdateToy }) => {
                                     <span className="label-text">Detail Description</span>
                                 </label>
                                 <label>
-                                    <input type="text" name="description" defaultValue={description} placeholder="Detail Description" className="input input-bordered w-full" />
+                                    {/* <input type="text" name="description" defaultValue={description} placeholder="Detail Description" className="input input-bordered w-full" /> */}
+                                    <textarea type="text" className="textarea input-bordered w-full" name="description" defaultValue={description} placeholder="Detail Description"></textarea>
                                 </label>
                             </div>
                         </div>

@@ -14,8 +14,8 @@ const MyToy = ({ myToy, i, handleDelete }) => {
 
         const form = event.target;
 
-        const price = form.price.value;
-        const quantity = form.quantity.value;
+        const price = parseInt(form.price.value);
+        const quantity = parseInt(form.quantity.value);
         const description = form.description.value;
 
         const updatedToy = { price, quantity, description }
@@ -52,7 +52,7 @@ const MyToy = ({ myToy, i, handleDelete }) => {
         <tr className='text-center'>
             <td>{i + 1}</td>
             <td>
-                <div className="flex items-center justify-center space-x-5">
+                <div className="flex items-center justify-start space-x-5">
                     <div className="avatar">
                         <div className="mask mask-squircle w-20 h-20">
                             <img src={photoUrl} alt="Avatar Tailwind CSS Component" />

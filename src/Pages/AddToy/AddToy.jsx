@@ -17,9 +17,9 @@ const AddToy = () => {
         const sellerEmail = form.sellerEmail.value;
         const subCategory = form.subCategory.value;
         const photoUrl = form.photoUrl.value;
-        const price = form.price.value;
-        const rating = form.rating.value;
-        const quantity = form.quantity.value;
+        const price = parseInt(form.price.value);
+        const rating = parseInt(form.rating.value);
+        const quantity = parseInt(form.quantity.value);
         const description = form.description.value;
 
         const newToy = { toyName, sellerName, sellerEmail, subCategory, photoUrl, price, rating, quantity, description }
@@ -50,7 +50,7 @@ const AddToy = () => {
     }
 
     return (
-        <div className="p-24">
+        <div className="px-16 my-12">
             <h2 className="text-5xl text-center font-extrabold mb-10">Add a Toy</h2>
             <form onSubmit={handleAddToy}>
                 {/* form toy name and seller name row */}
@@ -90,9 +90,9 @@ const AddToy = () => {
                             <input type="text" name="subCategory" placeholder="Sub-Category" className="input input-bordered w-full" />
                         </label> */}
                         <select className="select select-bordered w-full" name='subCategory' placeholder='Sub-Category'>
-                            <option>Science kits</option>
-                            <option>Math learning toys</option>
-                            <option>engineering kits</option>
+                            <option>Math Toys</option>
+                            <option>Language Toys</option>
+                            <option>Science Toys</option>
                         </select>
                     </div>
                 </div>
@@ -145,7 +145,7 @@ const AddToy = () => {
                         </label>
                     </div>
                 </div>
-                <input type="submit" value="Add Toy" className="btn btn-block btn-secondary" />
+                <input type="submit" value="Add Toy" className="btn btn-block bg-gradient-to-r from-[#2563EB] to-[#0949d2]  border-none hover:bg-[#0949d2]" />
 
             </form>
         </div>
