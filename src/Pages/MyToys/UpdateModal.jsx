@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const UpdateModal = ({ myToy, handleUpdateToy }) => {
+    const [close, setClose] = useState(false);
+
     const { _id, price, quantity, description } = myToy;
+
     return (
         <div>
             {/* modal body */}

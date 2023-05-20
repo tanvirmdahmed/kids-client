@@ -3,12 +3,14 @@ import { FaEdit, FaRegStar, FaStar } from 'react-icons/fa';
 import Rating from 'react-rating';
 import Swal from 'sweetalert2';
 import UpdateModal from './UpdateModal';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const MyToy = ({ myToy, i, handleDelete }) => {
     const { _id, photoUrl, toyName, rating, subCategory, price, quantity } = myToy;
 
     const handleUpdateToy = event => {
-        // event.preventDefault();
+        event.preventDefault();
 
         const form = event.target;
 
@@ -32,12 +34,15 @@ const MyToy = ({ myToy, i, handleDelete }) => {
             .then(data => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
-                    Swal.fire({
-                        title: 'Success!',
-                        text: 'Coffee Updated Successfully',
-                        icon: 'success',
-                        confirmButtonText: 'Cool'
-                    })
+                    // Swal.fire({
+                    //     title: 'Success!',
+                    //     text: 'Coffee Updated Successfully',
+                    //     icon: 'success',
+                    //     confirmButtonText: 'Cool'
+                    // })
+                    toast.success('Toy successfully updated!', {
+                        position: toast.POSITION.TOP_CENTER
+                    });
                 }
             })
     }
@@ -87,6 +92,7 @@ const MyToy = ({ myToy, i, handleDelete }) => {
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
             </td>
+            <ToastContainer></ToastContainer>
         </tr>
     );
 };
