@@ -29,7 +29,7 @@ const AllToys = () => {
                     </button>
                 </div>
             </div>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto" data-aos="zoom-in-up">
                 <table className="table w-full">
                     {/* head */}
                     <thead className='bg-slate-500'>

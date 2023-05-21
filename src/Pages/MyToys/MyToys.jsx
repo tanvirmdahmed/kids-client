@@ -12,6 +12,7 @@ const MyToys = () => {
     const [myToysDefault, setMyToysDefault] = useState([]);
     const [myToysAsc, setMyToysAsc] = useState([]);
     const [myToysDsc, setMyToysDsc] = useState([]);
+    const [update, setUpdate] = useState(false);
     console.log(myToys, myToysAsc);
 
 
@@ -20,28 +21,31 @@ const MyToys = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setMyToys(data))
-    }, [url]);
+    }, [url, update]);
 
     const urlDefault = `http://localhost:5000/myToys?sellerEmail=${user?.email}`;
     useEffect(() => {
         fetch(urlDefault)
             .then(res => res.json())
-            .then(data => setMyToysDefault(data))
-    }, [url]);
+            .then(data => {
+                setMyToysDefault(data);
+                console.log(data);
+            })
+    }, []);
 
     const urlAsc = `http://localhost:5000/myToysAsc?sellerEmail=${user?.email}`;
     useEffect(() => {
         fetch(urlAsc)
             .then(res => res.json())
             .then(data => setMyToysAsc(data))
-    }, [url]);
+    }, []);
 
     const urlDsc = `http://localhost:5000/myToysDsc?sellerEmail=${user?.email}`;
     useEffect(() => {
         fetch(urlDsc)
             .then(res => res.json())
             .then(data => setMyToysDsc(data))
-    }, [url]);
+    }, []);
 
     const handleDefault = () => {
         setMyToys(myToysDefault);
@@ -92,8 +96,8 @@ const MyToys = () => {
     }
 
     return (
-        <div className="overflow-x-auto w-full my-12">
-            <div className="dropdown flex justify-end">
+        <div className='my-6'>
+            <div className="dropdown flex justify-end mb-5">
                 <label tabIndex={0} className="flex items-center border-2 border-gray-900 rounded-lg p-3 my-4 m-1">Sort by Price <FaAngleDown></FaAngleDown></label>
                 <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
                     <li onClick={handleDefault}><a>Default</a></li>
@@ -101,30 +105,39 @@ const MyToys = () => {
                     <li onClick={handleAscending}><a>Price Hight to Low</a></li>
                 </ul>
             </div>
-            <table className="table w-full">
-                {/* head */}
-                <thead>
-                    <tr className='text-2xl'>
-                        <th className='text-base font-bold'>Sl No.</th>
-                        <th className='text-base font-bold'>Toy Name & Ratting</th>
-                        <th className='text-base font-bold'>Sub-Category</th>
-                        <th className='text-base font-bold'>Price</th>
-                        <th className='text-base font-bold'>Available Quantity</th>
-                        <th className='text-base font-bold'>Update Toy</th>
-                        <th className='text-base font-bold'></th>
-                    </tr>
-                </thead>
-                <tbody>
+            <div className="overflow-x-auto w-full">
+                <table className="table w-full">
+                    {/* head */}
+                    <thead>
+                        <tr className='text-2xl'>
+                            <th className='text-base font-bold'>Sl No.</th>
+                            <th className='text-base font-bold'>Toy Name & Ratting</th>
+                            <th className='text-base font-bold'>Sub-Category</th>
+                            <th className='text-base font-bold'>Price</th>
+                            <th className='text-base font-bold'>Available Quantity</th>
+                            <th className='text-base font-bold'>Update Toy</th>
+                            <th className='text-base font-bold'></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            myToys.map((myToy, i) => <MyToy
+                                key={myToy._id}
+                                myToy={myToy}
+                                i={i}
+                                update={update}
+                                setUpdate={setUpdate}
+                                handleDelete={handleDelete}
+                            ></MyToy>)
+                        }
+                    </tbody>
+                </table>
+                <div>
                     {
-                        myToys.map((myToy, i) => <MyToy
-                            key={myToy._id}
-                            myToy={myToy}
-                            i={i}
-                            handleDelete={handleDelete}
-                        ></MyToy>)
+                        myToys.length === 0 && <p className='text-xl text-center my-14'>No data Available</p>
                     }
-                </tbody>
-            </table>
+                </div>
+            </div>
         </div>
     );
 };

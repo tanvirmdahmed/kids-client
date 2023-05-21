@@ -8,7 +8,9 @@ const SingleToy = () => {
     const { photoUrl, toyName, sellerName, sellerEmail, price, rating, quantity, description } = singleToy;
     console.log(singleToy);
     return (
-        <div className="card flex-col md:flex-row lg:flex-row items-center justify-center card-side bg-base-100 shadow-xl mx-auto my-12 p-6">
+        <div className="card flex-col md:flex-row lg:flex-row items-center justify-center card-side bg-base-100 shadow-xl mx-auto my-12 p-6" data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000">
             <figure className='w-1/2'><img src={photoUrl} alt="Movie" /></figure>
             <div className=" w-1/2 ml-10 space-y-5">
                 <h2 className="card-title text-3xl">{toyName}</h2>

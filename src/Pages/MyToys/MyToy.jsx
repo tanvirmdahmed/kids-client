@@ -6,7 +6,7 @@ import UpdateModal from './UpdateModal';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const MyToy = ({ myToy, i, handleDelete }) => {
+const MyToy = ({ myToy, i, update, setUpdate, handleDelete }) => {
     const { _id, photoUrl, toyName, rating, subCategory, price, quantity } = myToy;
 
     const handleUpdateToy = event => {
@@ -40,6 +40,7 @@ const MyToy = ({ myToy, i, handleDelete }) => {
                     //     icon: 'success',
                     //     confirmButtonText: 'Cool'
                     // })
+                    setUpdate(!update);
                     toast.success('Toy successfully updated!', {
                         position: toast.POSITION.TOP_CENTER
                     });
@@ -49,7 +50,8 @@ const MyToy = ({ myToy, i, handleDelete }) => {
 
 
     return (
-        <tr className='text-center'>
+        <tr className='text-center' data-aos="fade-up"
+            data-aos-duration="1000">
             <td>{i + 1}</td>
             <td>
                 <div className="flex items-center justify-start space-x-5">
@@ -78,7 +80,7 @@ const MyToy = ({ myToy, i, handleDelete }) => {
             <td>{quantity} pcs</td>
             <td>
                 {/* modal button */}
-                <label htmlFor={_id} className="btn btn-square">
+                <label htmlFor={_id} className="btn btn-square btn-outline">
                     <FaEdit></FaEdit>
                 </label>
                 {/* modal body */}
@@ -88,7 +90,7 @@ const MyToy = ({ myToy, i, handleDelete }) => {
                 ></UpdateModal>
             </td>
             <td>
-                <button onClick={() => handleDelete(_id)} className="btn btn-circle">
+                <button onClick={() => handleDelete(_id)} className="btn btn-circle btn-outline">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
             </td>
