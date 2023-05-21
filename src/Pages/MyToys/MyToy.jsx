@@ -22,7 +22,7 @@ const MyToy = ({ myToy, i, update, setUpdate, handleDelete }) => {
         console.log(updatedToy);
 
         // send data to the server
-        fetch(`http://localhost:5000/myToy/${_id}`, {
+        fetch(`https://b7a11-toy-marketplace-server-side-tanvirmdahmed.vercel.app/myToy/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

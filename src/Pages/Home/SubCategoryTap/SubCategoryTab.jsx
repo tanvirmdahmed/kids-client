@@ -15,7 +15,7 @@ const SubCategoryTab = () => {
     console.log(activeTab);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toys/${activeTab}`)
+        fetch(`https://b7a11-toy-marketplace-server-side-tanvirmdahmed.vercel.app/toys/${activeTab}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -42,7 +42,8 @@ const SubCategoryTab = () => {
 
 
     return (
-        <div className='my-12'>
+        <div className='my-16'>
+            <h1 className='text-3xl text-center font-bold text-orange-500 mb-8'>Choose Your Toy by Category</h1>
             <Tabs className='text-center' selectedIndex={selectedTab} onSelect={handleTabChange}>
                 <TabList>
                     <Tab>Math Toys</Tab>

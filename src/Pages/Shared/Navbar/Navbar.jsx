@@ -36,8 +36,10 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className='flex items-center gap-3'>
-                    <img src="https://i.ibb.co/PGSxjFX/345661271-907576583633683-8660512588925463605-n-removebg-preview.png" className='w-8 md:w-12 lg:w-12 h-8 md:h-10 lg:h-12' alt="" />
-                    <Link to='/' className="text-[#EB1C23] text-xl md:text-xl lg:text-3xl font-extrabold">Toy Biz</Link>
+                    <Link to='/'>
+                        <img src="https://i.ibb.co/x19776c/encounter-kids-01-removebg-preview.png" className='w-8 md:w-12 lg:w-12 h-8 md:h-10 lg:h-12' alt="" />
+                    </Link>
+                    <Link to='/' className="text-xl md:text-xl lg:text-3xl font-extrabold"><span className='text-[#01B5FF]'>K</span><span className='text-[#FE8400]'>I</span><span className='text-[#E000EC]'>D</span><span className='text-[#857416]'>S</span></Link>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">

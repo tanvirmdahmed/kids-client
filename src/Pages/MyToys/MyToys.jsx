@@ -16,14 +16,14 @@ const MyToys = () => {
     console.log(myToys, myToysAsc);
 
 
-    const url = `http://localhost:5000/myToys?sellerEmail=${user?.email}`;
+    const url = `https://b7a11-toy-marketplace-server-side-tanvirmdahmed.vercel.app/myToys?sellerEmail=${user?.email}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
             .then(data => setMyToys(data))
     }, [url, update]);
 
-    const urlDefault = `http://localhost:5000/myToys?sellerEmail=${user?.email}`;
+    const urlDefault = `https://b7a11-toy-marketplace-server-side-tanvirmdahmed.vercel.app/myToys?sellerEmail=${user?.email}`;
     useEffect(() => {
         fetch(urlDefault)
             .then(res => res.json())
@@ -33,14 +33,14 @@ const MyToys = () => {
             })
     }, []);
 
-    const urlAsc = `http://localhost:5000/myToysAsc?sellerEmail=${user?.email}`;
+    const urlAsc = `https://b7a11-toy-marketplace-server-side-tanvirmdahmed.vercel.app/myToysAsc?sellerEmail=${user?.email}`;
     useEffect(() => {
         fetch(urlAsc)
             .then(res => res.json())
             .then(data => setMyToysAsc(data))
     }, []);
 
-    const urlDsc = `http://localhost:5000/myToysDsc?sellerEmail=${user?.email}`;
+    const urlDsc = `https://b7a11-toy-marketplace-server-side-tanvirmdahmed.vercel.app/myToysDsc?sellerEmail=${user?.email}`;
     useEffect(() => {
         fetch(urlDsc)
             .then(res => res.json())
@@ -74,7 +74,7 @@ const MyToys = () => {
             if (result.isConfirmed) {
 
 
-                fetch(`http://localhost:5000/myToys/${id}`, {
+                fetch(`https://b7a11-toy-marketplace-server-side-tanvirmdahmed.vercel.app/myToys/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
