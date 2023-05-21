@@ -20,12 +20,12 @@ const CustomerFeedback = () => {
                                 <div className="flex items-center space-x-3">
                                     <div className="avatar">
                                         <div className="mask mask-squircle w-12 h-12">
-                                            <img src="https://i.ibb.co/HhYTGvh/testi-1-copyright-120x120.png" alt="Avatar Tailwind CSS Component" />
+                                            <img src="https://i.ibb.co/d4wNfkX/testi-8-copyright-120x120.png" alt="Avatar Tailwind CSS Component" />
                                         </div>
                                     </div>
                                     <div>
-                                        <div className="font-bold text-black opacity-70">Hart Hagerty</div>
-                                        <div className="text-sm text-[#20233f] opacity-50">CEO, Business co.</div>
+                                        <div className="font-bold text-black opacity-70">Amber Heart</div>
+                                        <div className="text-sm text-[#20233f] opacity-50">CFO, Business co.</div>
                                     </div>
                                 </div>
                             </div>
