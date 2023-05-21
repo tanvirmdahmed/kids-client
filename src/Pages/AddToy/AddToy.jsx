@@ -141,7 +141,8 @@ const AddToy = () => {
                             <span className="label-text">Detail Description</span>
                         </label>
                         <label>
-                            <input type="text" name="description" placeholder="Detail Description" className="input input-bordered w-full" />
+                            {/* <input type="text" name="description" placeholder="Detail Description" className="input input-bordered w-full" /> */}
+                            <textarea type="text" className="textarea input-bordered w-full" name="description" placeholder="Detail Description"></textarea>
                         </label>
                     </div>
                 </div>
