@@ -15,15 +15,15 @@ const Footer = () => {
                     <a className="link link-hover text-sm md:text-lg lg:text-lg">Contact</a>
                     <a className="link link-hover text-sm md:text-lg lg:text-lg">Toys</a>
                     <a className="link link-hover text-sm md:text-lg lg:text-lg">Menu</a> */}
-                    <Link className='hover:text-blue-400' to='/'>Home</Link>
-                    <Link className='hover:text-blue-400' to='/allToys'>All Toys</Link>
+                    <Link className='hover:text-blue-400 text-sm md:text-lg lg:text-lg' to='/'>Home</Link>
+                    <Link className='hover:text-blue-400 text-sm md:text-lg lg:text-lg' to='/allToys'>All Toys</Link>
                     {
-                        user && <Link className='hover:text-blue-400' to='/myToys'>My Toys</Link>
+                        user && <Link className='hover:text-blue-400 text-sm md:text-lg lg:text-lg' to='/myToys'>My Toys</Link>
                     }
                     {
-                        user && <Link className='hover:text-blue-400' to='/addToy'>Add a Toy</Link>
+                        user && <Link className='hover:text-blue-400 text-sm md:text-lg lg:text-lg' to='/addToy'>Add a Toy</Link>
                     }
-                    <Link className='hover:text-blue-400' to='/blogs'>Blogs</Link>
+                    <Link className='hover:text-blue-400 text-sm md:text-lg lg:text-lg' to='/blogs'>Blogs</Link>
                 </div>
                 <div className='mx-auto text-white opacity-90' data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                     <img src="https://i.ibb.co/x19776c/encounter-kids-01-removebg-preview.png" className='w-24 h-24' alt="" />
@@ -32,9 +32,9 @@ const Footer = () => {
                 </div>
                 <div>
                     <div className="grid grid-flow-col gap-4">
-                        <a className='' href='https://twitter.com/'><FaTwitter className='text-2xl text-[#1c93e4]'></FaTwitter></a>
-                        <a href='https://www.youtube.com/'><FaYoutube className='text-2xl text-[#f10002]'></FaYoutube></a>
-                        <a href='https://www.facebook.com/'><FaFacebook className='text-2xl text-[#1771e6]'></FaFacebook></a>
+                        <a data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" href='https://twitter.com/'><FaTwitter className='text-2xl text-[#1c93e4]'></FaTwitter></a>
+                        <a data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" href='https://www.youtube.com/'><FaYoutube className='text-2xl text-[#f10002]'></FaYoutube></a>
+                        <a data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" href='https://www.facebook.com/'><FaFacebook className='text-2xl text-[#1771e6]'></FaFacebook></a>
                     </div>
                 </div>
                 <div className='text-white opacity-60'>
