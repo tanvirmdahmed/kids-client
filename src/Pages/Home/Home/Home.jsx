@@ -2,7 +2,10 @@ import React from 'react';
 import useTitle from '../../../Hooks/useTitle';
 import Banner from '../Banner/Banner';
 import PhotoGallery from '../PhotoGallery/PhotoGallery';
-import SubCategoryTap from '../SubCategoryTap/SubCategoryTap';
+
+import Newsletter from '../Newsletter/Newsletter';
+import SubCategoryTab from '../SubCategoryTap/SubCategoryTab';
+import CustomerFeedback from './CustomerFeedback/CustomerFeedback';
 
 const Home = () => {
     useTitle('Home')
@@ -10,7 +13,9 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <PhotoGallery></PhotoGallery>
-            <SubCategoryTap></SubCategoryTap>
+            <SubCategoryTab></SubCategoryTab>
+            <CustomerFeedback></CustomerFeedback>
+            <Newsletter></Newsletter>
         </div>
     );
 };

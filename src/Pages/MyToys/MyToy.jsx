@@ -1,7 +1,6 @@
 import React from 'react';
 import { FaEdit, FaRegStar, FaStar } from 'react-icons/fa';
 import Rating from 'react-rating';
-import Swal from 'sweetalert2';
 import UpdateModal from './UpdateModal';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -34,15 +33,9 @@ const MyToy = ({ myToy, i, update, setUpdate, handleDelete }) => {
             .then(data => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
-                    // Swal.fire({
-                    //     title: 'Success!',
-                    //     text: 'Coffee Updated Successfully',
-                    //     icon: 'success',
-                    //     confirmButtonText: 'Cool'
-                    // })
                     setUpdate(!update);
                     toast.success('Toy successfully updated!', {
-                        position: toast.POSITION.TOP_CENTER
+                        position: toast.POSITION.BOTTOM_CENTER
                     });
                 }
             })
