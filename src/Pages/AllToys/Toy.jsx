@@ -15,7 +15,7 @@ const Toy = ({ toy, i }) => {
             <td>{quantity} pcs</td>
             <td>
                 <Link to={`/singleToy/${_id}`}>
-                    <button htmlFor="my-modal-3" className='btn btn-active'>View Details</button>
+                    <button htmlFor="my-modal-3" className='btn bg-gradient-to-r from-[#5480e0] to-[#0949d2] border-none'>View Details</button>
                 </Link>
             </td>
         </tr>

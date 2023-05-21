@@ -13,8 +13,11 @@ const AllToys = () => {
         const value = event.target.value;
         setSearchValue(value);
         // Filter toys based on search term
+        // const filteredToys = toys.filter((toy) =>
+        //     toy.toyName.toLowerCase().includes(value.toLowerCase()) || toy.subCategory.toLowerCase().includes(value.toLowerCase())
+        // );
         const filteredToys = toys.filter((toy) =>
-            toy.toyName.toLowerCase().includes(value.toLowerCase()) || toy.subCategory.toLowerCase().includes(value.toLowerCase())
+            toy.toyName.toLowerCase().includes(value.toLowerCase())
         );
         setAllToys(filteredToys);
     };
@@ -29,7 +32,8 @@ const AllToys = () => {
                     </button>
                 </div>
             </div>
-            <div className="overflow-x-auto" data-aos="zoom-in-up">
+            <div className="overflow-x-auto" data-aos="fade-up"
+                data-aos-duration="1000">
                 <table className="table w-full">
                     {/* head */}
                     <thead className='bg-slate-500'>

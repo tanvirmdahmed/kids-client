@@ -44,7 +44,7 @@ const UpdateModal = ({ myToy, handleUpdateToy }) => {
                                 </label>
                             </div>
                         </div>
-                        <input type="submit" value="Edit Toy" className="btn btn-block btn-info" />
+                        <input type="submit" value="Edit Toy" className="btn btn-block bg-gradient-to-r from-[#567fd6] to-[#0949d2] border-none" />
                     </form>
                 </div>
             </div>
